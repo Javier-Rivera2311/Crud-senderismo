@@ -2,9 +2,10 @@ import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Too
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
+import image from "../../assets/logoBar/image.png";
 
 function Header() {
-  const pages = ["Products", "Pricing", "Blog"];
+  const pages = ["Routes", "Comments", "Difficulty"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -119,7 +120,7 @@ function Header() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://www.universidadesonline.cl/logos/original/logo-universidad-de-valparaiso.png"
+                  src={image}
                 />
               </IconButton>
             </Tooltip>

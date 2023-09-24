@@ -27,7 +27,7 @@ function Home() {
           width: "100%",
         }}
       >
-        <h1 style={textStyle}>Rutas de Senderismo en Chile</h1>
+        <h1 style={textStyle}>Hiking Routes in Chile</h1>
       </div>
     </PageContainer>
   );
