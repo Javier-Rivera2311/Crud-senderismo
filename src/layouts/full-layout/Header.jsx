@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import image from "../../assets/logoBar/image.png";
+import opcBar from "../../assets/logoBar/opcBar.png";
+
 
 function Header() {
   const pages = ["Routes", "Comments", "Difficulty"];
@@ -29,7 +31,7 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
         <Toolbar disableGutters sx={{ backgroundColor: "black" }}>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -45,7 +47,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <img src={image} alt="Logo" style={{ height: "50px", marginRight: "10px" }} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -120,7 +122,7 @@ function Header() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src={image}
+                  src={opcBar}
                 />
               </IconButton>
             </Tooltip>
