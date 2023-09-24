@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import PageContainer from "../../components/container/PageContainer";
+import img from "../../assets/fondos/404.jpg"; // Importa tu imagen de fondo
 
 const Error = () => (
   <PageContainer title="Error" description="Página de error">
@@ -11,13 +12,23 @@ const Error = () => (
       height="100vh"
       textAlign="center"
       justifyContent="center"
-      sx={{ backgroundColor: "#e4f5ff" }}
+      sx={{
+        backgroundImage: `url(${img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <Container maxWidth="md">
-        <Typography align="center" variant="h1">
+      <Container
+        maxWidth="md"
+        sx={{
+          backgroundColor: "transparent",
+          boxShadow: "none",
+        }}
+      >
+        <Typography align="center" variant="h1" sx={{ color: "white" }}>
           404
         </Typography>
-        <Typography align="center" variant="h4">
+        <Typography align="center" variant="h4" sx={{ color: "white" }}>
           This page could not be found.
         </Typography>
         <Button

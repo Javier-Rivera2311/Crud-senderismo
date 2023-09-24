@@ -12,8 +12,8 @@ function Home() {
   };
 
   return (
-    <PageContainer title="Pagina inicio" description="aaaaaaaaaaaaaaaaa">
-      {/* Utiliza CSS para establecer la imagen de fondo */}
+    <PageContainer title="Pagina inicio" description="Home">
+      
       <div
         style={{
           backgroundImage: `url(${fondo})`,
