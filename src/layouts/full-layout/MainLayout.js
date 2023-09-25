@@ -2,6 +2,7 @@ import { Backdrop, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./footer";
 
 function MainLayout() {
   const [loading, isLoading] = useState(true);
@@ -16,8 +17,9 @@ function MainLayout() {
       {!loading ? (
         <>
         <Header />
-          <Outlet />
-        </>
+        <Outlet />
+        <Footer />
+      </>
       ) : (
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
