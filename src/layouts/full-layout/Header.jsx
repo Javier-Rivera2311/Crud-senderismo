@@ -2,6 +2,7 @@ import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Too
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
+import SearchIcon from "@mui/icons-material/Search";
 import image from "../../assets/logoBar/image.png";
 import opcBar from "../../assets/logoBar/opcBar.png";
 
@@ -117,7 +118,13 @@ function Header() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}>
+            <Box sx={{ bgcolor: "white", borderRadius: "4px", display: "flex", alignItems: "center", mr: 1 }}>
+              <IconButton sx={{ p: 1 }}>
+                <SearchIcon sx={{ color: "black" }} />
+              </IconButton>
+              <input type="text" placeholder="Search" style={{ border: "none", backgroundColor: "transparent", color: "black", fontSize: "16px", fontWeight: 500, outline: "none" }} />
+            </Box>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
