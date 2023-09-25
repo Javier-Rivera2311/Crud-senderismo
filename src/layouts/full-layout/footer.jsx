@@ -16,12 +16,7 @@ const Footer = () => {
             <Typography variant="body2" gutterBottom color="white">
               City, Chile
             </Typography>
-            <Typography variant="body2" gutterBottom color="white">
-              Phone: (56) 912345678
-            </Typography>
-            <Typography variant="body2" gutterBottom color="white">
-              Email: info@compañia.com
-            </Typography>
+            
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom color="white">
