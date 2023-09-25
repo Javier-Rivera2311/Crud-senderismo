@@ -8,7 +8,7 @@ import opcBar from "../../assets/logoBar/opcBar.png";
 
 
 function Header() {
-  const pages = ["Routes", "Comments", "Difficulty"];
+  const pages = ["Routes", "Comments", "Publish route"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
