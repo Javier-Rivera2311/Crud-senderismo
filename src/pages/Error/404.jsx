@@ -9,7 +9,7 @@ const Error = () => (
     <Box
       display="flex"
       flexDirection="column"
-      height="100vh"
+      height="75vh"
       textAlign="center"
       justifyContent="center"
       sx={{
