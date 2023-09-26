@@ -35,8 +35,11 @@ function Home() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Cards />
       </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+      </div>
     </PageContainer>
   );
 }
 
 export default Home;
+
