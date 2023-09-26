@@ -2,20 +2,21 @@ import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 
 function Cards() {
-  const cardStyle = {
-    margin: "1rem",
-    minWidth: "275px",
-    maxWidth: "400px",
-    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-    transition: "0.3s",
-    borderRadius: "5px",
-    backgroundColor: "white",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  };
+    const cardStyle = {
+        margin: "1rem",
+        minWidth: "275px",
+        maxWidth: "400px",
+        border: "5px solid #ffeb3b",
+        boxShadow: "none",
+        transition: "all 0.5s cubic-bezier(0.23, 1, 0.320, 1)",
+        borderRadius: "5px",
+        backgroundColor: "white",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+      };
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -37,10 +38,7 @@ function Cards() {
             ¿Cómo funciona?
           </Typography>
           <Typography variant="body1">
-            Los usuarios pueden crear una cuenta y luego iniciar sesión para
-            acceder a la aplicación. Una vez que hayan iniciado sesión, pueden
-            agregar nuevas rutas de senderismo, ver las rutas de otros usuarios,
-            editar y eliminar sus rutas y ver su perfil.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, maiores deleniti qui dignissimos, itaque at distinctio repudiandae placeat eum temporibus delectus ratione ipsa alias quod ducimus nam? At, delectus atque!
           </Typography>
         </CardContent>
       </Card>
@@ -51,7 +49,7 @@ function Cards() {
           </Typography>
           <Typography variant="body1">
             Antes de comenzar una ruta de senderismo, asegúrate de llevar
-            suficiente agua y comida, ropa y calzado adecuados, y un mapa o GPS
+            suficiente agua, comida, ropa y calzado adecuados, y un mapa o GPS
             para no perderte. También es importante informar a alguien de tu ruta
             y hora estimada de regreso, por si ocurre algún imprevisto.
           </Typography>

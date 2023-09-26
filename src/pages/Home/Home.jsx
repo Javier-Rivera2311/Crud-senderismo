@@ -26,7 +26,7 @@ function Home() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "70vh",
+          height: "65vh",
           width: "100%",
         }}
       >
