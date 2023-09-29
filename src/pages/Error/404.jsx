@@ -12,6 +12,7 @@ const Error = () => (
       height="75vh"
       textAlign="center"
       justifyContent="center"
+      alignItems="center"
       sx={{
         backgroundImage: `url(${img})`,
         backgroundSize: "cover",
