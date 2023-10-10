@@ -2,6 +2,7 @@ import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import fondo from "../../assets/fondos/fondo.jpg"; // Importa imagen de fondo
 import Cards from "../..//pages/Home/components/cards.jsx";
+import Rutas from "../..//pages/Home/components/rutas.jsx";
 
 function Home() {
   const textStyle = {
@@ -36,6 +37,7 @@ function Home() {
         <Cards />
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
+      <Rutas />
       </div>
     </PageContainer>
   );
