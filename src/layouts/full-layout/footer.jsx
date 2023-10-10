@@ -47,7 +47,7 @@ const Footer = () => {
               </a>
             </Typography>
             <Typography variant="body2" gutterBottom>
-              <a href="https://twitter.com/?lang=es" style={{ color: "white" }}>
+              <a href="https://twitter.com/?lang=es" style={{ color: "white" }} translate="no" >
                 Twitter
               </a>
             </Typography>
