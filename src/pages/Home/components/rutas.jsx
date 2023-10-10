@@ -1,17 +1,17 @@
 import React from 'react';
-import ruta1 from '../../assets/rutas/ruta1.jpeg';
-import ruta2 from '../../assets/rutas/ruta2.jpeg';
+//import ruta1 from '../../assets/rutas/ruta1.jpeg';
+//import ruta2 from '../../assets/rutas/ruta2.jpeg';
 
 const tarjetasDeRutas = [
   {
-    imagen: ruta1,
+    //imagen: ruta1,
     titulo: 'Mirador Torres del Paine',
     dificultad: 'Dificultad: Media',
     ubicacion: 'Ubicación: Lorem Ipsum',
     descripcion: 'Descripción: Lorem Ipsum',
   },
   {
-    imagen: ruta2,
+    //imagen: ruta2,
     titulo: 'Salto de Apoquindo',
     dificultad: 'Dificultad: Fácil',
     ubicacion: 'Ubicación: Lorem Ipsum',
