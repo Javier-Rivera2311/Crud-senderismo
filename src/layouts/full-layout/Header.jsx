@@ -1,12 +1,13 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 import image from "../../assets/logoBar/image.png";
 import opcBar from "../../assets/logoBar/opcBar.png";
 
-
 function Header() {
-  const pages = ["Routes", "Publish route"];
+  
+  const pages = ["Routes", "Publish Routes"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -30,12 +31,11 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
         <Toolbar disableGutters sx={{ backgroundColor: "black" }}>
-          
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -46,7 +46,11 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            <img src={image} alt="Logo" style={{ height: "50px", marginRight: "10px" }} />
+            <img
+              src={image}
+              alt="Logo"
+              style={{ height: "50px", marginRight: "10px" }}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -92,6 +96,8 @@ function Header() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                to={`/${page}`}
               >
                 {page}
               </Button>
@@ -102,10 +108,7 @@ function Header() {
 
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={opcBar}
-                />
+                <Avatar alt="Remy Sharp" src={opcBar} />
               </IconButton>
             </Tooltip>
             <Menu
