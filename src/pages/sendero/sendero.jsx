@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import rutas from "../../assets/fondos/rutas.jpg"; // Importa imagen de fondo
-
+import Ruta from "../..//pages/sendero/components/rutas.jsx";
 
 function Sendero() {
   const textStyle = {
@@ -34,6 +34,10 @@ function Sendero() {
    */}
         <h1 style={textStyle}>Routes</h1>
       </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Ruta />
+      </div>
+
     </PageContainer>
   );
 }
