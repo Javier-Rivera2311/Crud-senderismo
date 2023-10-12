@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
-import fondo from "../../assets/fondos/fondo.jpg"; // Importa imagen de fondo
+import publicar from "../../assets/fondos/publicar.jpg"; // Importa imagen de fondo
 
 
 function Sendero() {
@@ -13,11 +13,11 @@ function Sendero() {
   };
 
   return (
-    <PageContainer title="Rutas de senderismo" description="Rutas">
+    <PageContainer title="Publish" description="Publish Routes">
 
       <div
         style={{
-          backgroundImage: `url(${fondo})`,
+          backgroundImage: `url(${publicar})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -26,10 +26,12 @@ function Sendero() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "40vh",
+          height: "50vh",
           width: "100%",
         }}
       >
+        {/*Foto de <a href="https://unsplash.com/es/@karlarobinson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Karla Robinson</a> en <a href="https://unsplash.com/es/fotos/LtzOguTv0kU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  */}
         <h1 style={textStyle}>Publish Routes</h1>
       </div>
     </PageContainer>

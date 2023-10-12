@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
-import fondo from "../../assets/fondos/fondo.jpg"; // Importa imagen de fondo
+import rutas from "../../assets/fondos/rutas.jpg"; // Importa imagen de fondo
 
 
 function Sendero() {
@@ -17,7 +17,7 @@ function Sendero() {
 
       <div
         style={{
-          backgroundImage: `url(${fondo})`,
+          backgroundImage: `url(${rutas})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -26,10 +26,12 @@ function Sendero() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "40vh",
+          height: "50vh",
           width: "100%",
         }}
       >
+        {/* agregar Foto de <a href="https://unsplash.com/es/@hansjuergen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Hans-Jürgen Weinhardt</a> en <a href="https://unsplash.com/es/fotos/5RwAkpugU98?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   */}
         <h1 style={textStyle}>Routes</h1>
       </div>
     </PageContainer>
