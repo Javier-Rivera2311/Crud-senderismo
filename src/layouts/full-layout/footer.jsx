@@ -35,6 +35,7 @@ const Footer = () => {
             </Typography>
             <Typography variant="body2" gutterBottom color="white">
               Publish routes
+              
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
