@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import publicar from "../../assets/fondos/publicar.jpg"; // Importa imagen de fondo
-import Campos from "../PublishRoutes/componentesPublicarRutas/Campos.jsx";
+import Campos from "./componentesPublicarRutas/Campos.jsx";
 
 
 function Sendero() {

@@ -37,7 +37,7 @@ function FormularioFuncional() {
           <option value="opcion1">Principiante</option>
           <option value="opcion2">Intermedio</option>
           <option value="opcion3">Experto</option>
-          <option value="opcion4">Dios</option>
+          <option value="opcion4">Te lleva a conocer a Dios</option>
         </select>
 
         <label>Tipo de ruta:</label>
@@ -45,7 +45,6 @@ function FormularioFuncional() {
           <option value="opcion1">Rural</option>
           <option value="opcion2">Urbana</option>
           <option value="opcion3">Montañosa</option>
-          <option value="opcion4">Te lleva a conocer a Dios</option>
         </select>
 
         <button type="submit">Enviar</button>
