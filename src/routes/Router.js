@@ -6,6 +6,10 @@ import { Navigate } from "react-router-dom";
 const FullLayout = Loadable(
   lazy(() => import("../layouts/full-layout/MainLayout"))
 );
+const LoginLayout = Loadable(
+  lazy(() => import("../layouts/login-layout/LoginLayout"))
+);
+
 
 /* ***End Layouts**** */
 
@@ -40,9 +44,21 @@ const Router = [
       { path: "404", element: <Error /> },
       {path: "Routes",exact: true, element: <Sendero/>},
       {path: "Publish routes",exact: true, element: <Publish/>},
-      {path: "Login",exact: true, element: <Login/>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
       {path: "Profile",exact: true, element: <Profile/>},
+
+
+
+    ],
+  },
+  {
+    path: "/auth",
+    element: <LoginLayout />,
+    children: [
+      { path: "", exact: true, element: <Navigate to="/auth/login" /> },
+      { path: "*", element: <Navigate to="/404" /> },
+      { path: "404", element: <Error /> },
+      {path: "login",exact: true, element: <Login/>},
 
 
 
