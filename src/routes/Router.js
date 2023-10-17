@@ -19,6 +19,9 @@ const Sendero = Loadable(lazy(() => import("../pages/sendero/sendero")));
 
 const Publish = Loadable(lazy(() => import("../pages/PublishRoutes/Publicar")));
 <Publish path="/PublishRoutes" component={Publish} />
+
+const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
+<Profile path="/Profile" component={Profile} />
 /* ****Routes***** */
 
 const Login = Loadable(lazy(() => import("../pages/log/login")));
@@ -39,6 +42,7 @@ const Router = [
       {path: "Publish routes",exact: true, element: <Publish/>},
       {path: "Login",exact: true, element: <Login/>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
+      {path: "Profile",exact: true, element: <Profile/>},
 
 
 
