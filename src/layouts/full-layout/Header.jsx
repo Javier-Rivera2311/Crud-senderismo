@@ -27,6 +27,10 @@ function Header() {
     setAnchorElUser(null);
   };
 
+  const redireccionarMenu = (destino) => {
+    window.location.href = destino;
+  }
+
   return (
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
@@ -128,7 +132,7 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={() => redireccionarMenu(setting)} to>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
