@@ -13,6 +13,7 @@ function FormularioFuncional() {
 
   const handleComentarioChange = (event) => {
     setComentario(event.target.value);
+    
   };
 
   const handleOpcionChange = (event) => {
@@ -25,9 +26,15 @@ function FormularioFuncional() {
   }
 
   return (
-    <div class="card">
-      <div>
-        <form onSubmit={handleFormSubmit}>
+    <div className="card shadow">
+      <div 
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        padding: "20px",
+        borderRadius: "10px",
+        
+      }}>
+        <form onSubmit={handleFormSubmit} style={{display: "flex", flexDirection: "column",}}>
           <label style={{frontsize: '2m'}}>Nombre de la ruta:</label>
           <input type="text" value={nombre} onChange={handleNombreChange} /><br/>
 
@@ -44,12 +51,12 @@ function FormularioFuncional() {
 
           <label>Tipo de ruta:</label>
           <select value={opcionSeleccionada} onChange={handleOpcionChange}>
-            <option value="opcion1">Rural</option>
-            <option value="opcion2">Urbana</option>
-            <option value="opcion3">Montañosa</option>
+            <option value="opcion5">Rural</option>
+            <option value="opcion6">Urbana</option>
+            <option value="opcion7">Montañosa</option>
           </select><br/>
 
-          <button type="submit">Enviar</button><br/>
+          <button>Enviar</button>
         </form>
       </div>
     </div>
