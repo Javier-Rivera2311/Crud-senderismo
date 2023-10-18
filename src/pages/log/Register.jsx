@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import './Register.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -68,7 +68,7 @@ function RegisterForm() {
         <div className="btn">
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
-        <button className="button2">Do you already have an account? Log in</button>
+        <Link to="/auth/login" className="button2 link-no-underline">Do you already have an account? Log in</Link>
       </form>
     </div>
   );

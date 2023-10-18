@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './NewPassword.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";

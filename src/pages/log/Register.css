@@ -113,3 +113,6 @@
     width: 100%;
     transition: background-image 0.5s ease-in-out;
   }
+  .link-no-underline {
+    text-decoration: none;
+  }
