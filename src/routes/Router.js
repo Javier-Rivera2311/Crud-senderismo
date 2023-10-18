@@ -34,6 +34,12 @@ const Login = Loadable(lazy(() => import("../pages/log/login")));
 const AboutUs = Loadable(lazy(() => import("../pages/AboutUs/ABOUT_US")));
 <AboutUs path="/AboutUs" component={AboutUs} />
 
+const Register = Loadable(lazy(() => import("../pages/log/Register")));
+<Register path="/Register" component={Register} />
+
+const NewPassword = Loadable(lazy(() => import("../pages/log/NewPassword")));
+<NewPassword path="/NewPassword" component={NewPassword} />
+
 const Router = [
   {
     path: "/",
@@ -59,6 +65,8 @@ const Router = [
       { path: "*", element: <Navigate to="/404" /> },
       { path: "404", element: <Error /> },
       {path: "login",exact: true, element: <Login/>},
+      {path: "Register",exact: true, element: <Register/>},
+      {path: "NewPassword",exact: true, element: <NewPassword/>},
 
 
 
