@@ -48,7 +48,8 @@ function NewPassword() {
           <input placeholder="Confirm Password" className="input-field" type="password" />
         </div>
         <div className="btn">
-          <button className="button1">Chanche password</button>
+          <Link to="/auth/login" className="button1 link-no-underline">Chanche password</Link>
+
         </div>
       </form></div>
   );
