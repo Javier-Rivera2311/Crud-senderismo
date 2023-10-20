@@ -1,67 +1,46 @@
 import React from "react";
-import { useState } from 'react';
-import './fondo.css'
+import { useForm } from "react-hook-form";
+import "./fondo.css"
 
-function FormularioFuncional() {
-  const [nombre, setNombre] = useState('');
-  const [comentario, setComentario] = useState('');
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState('opcion1');
+function Campos() {
+  const { register, handleSubmit } = useForm();
 
-  const handleNombreChange = (event) => {
-    setNombre(event.target.value);
+  const onSubmit = (data) => {
+    console.log(data);
+    alert("Ruta publicada con éxito");
+
   };
-
-  const handleComentarioChange = (event) => {
-    setComentario(event.target.value);
-    
-  };
-
-  const handleOpcionChange = (event) => {
-    setOpcionSeleccionada(event.target.value);
-  };
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    alert('Haz creado una ruta!!!');
-  }
 
   return (
-    <div className="card shadow">
-      <div 
-      style={{
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
-        padding: "20px",
-        borderRadius: "10px",
-        
-      }}>
-        <form onSubmit={handleFormSubmit} style={{display: "flex", flexDirection: "column",}}>
-          <label style={{frontsize: '2m'}}>Nombre de la ruta:</label>
-          <input type="text" value={nombre} onChange={handleNombreChange} /><br/>
+    
+    <div className= "card shadow">
+      <form onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", flexDirection: "column", }}>
+        <label>Nombre de la ruta:</label>
+        <input type="text" {...register("nombre")} />
 
-          <label>Descripción de la ruta:</label>
-          <textarea value={comentario} onChange={handleComentarioChange} /><br/>
+        <label>Descripción de la ruta:</label>
+        <textarea style={{resize:"none"}} {...register("comentario")} />
 
-          <label>Selecciona la dificultad de la ruta:</label>
-          <select value={opcionSeleccionada} onChange={handleOpcionChange}>
-            <option value="opcion1">Principiante</option>
-            <option value="opcion2">Intermedio</option>
-            <option value="opcion3">Experto</option>
-            <option value="opcion4">Te lleva a conocer a Dios</option>
-          </select><br/>
+        <label>Selecciona la dificultad de la ruta:</label>
+        <select {...register("dificultad")}>
+          <option value="Principiante">Principiante</option>
+          <option value="Intermedio">Intermedio</option>
+          <option value="Experto">Experto</option>
+          <option value="TellevaaconoceraDios">Te lleva a conocer a Dios</option>
+        </select>
 
-          <label>Tipo de ruta:</label>
-          <select value={opcionSeleccionada} onChange={handleOpcionChange}>
-            <option value="opcion5">Rural</option>
-            <option value="opcion6">Urbana</option>
-            <option value="opcion7">Montañosa</option>
-          </select><br/>
+        <label>Tipo de ruta:</label>
+        <select {...register("tipo")}>
+          <option value="Rural">Rural</option>
+          <option value="Urbana">Urbana</option>
+          <option value="Montañosa">Montañosa</option>
+        </select>
 
-          <button>Enviar</button>
-        </form>
-      </div>
+        <button type="submit">Enviar</button>
+      </form>
     </div>
+    
   );
 }
 
-export default FormularioFuncional;
-
+export default Campos;
