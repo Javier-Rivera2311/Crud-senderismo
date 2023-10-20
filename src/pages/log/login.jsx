@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './login.css';
 import './login.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -48,9 +50,9 @@ function LoginForm() {
         </div>
         <div className="btn">
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button className="button2">Sign Up</button>
+          <Link to="/auth/register" className="button2 link-no-underline">Sign Up</Link>
         </div>
-        <button className="button3">Forgot Password</button>
+        <Link to="/auth/newpassword" className="button3 link-no-underline">Forgot Password?</Link>
       </form></div>
   );
 }
