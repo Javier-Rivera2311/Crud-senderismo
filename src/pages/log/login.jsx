@@ -63,7 +63,9 @@ function LoginForm() {
         </button>
         </div>
         <div className="btn">
+          {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          
           <Link to="/auth/register" className="button2 link-no-underline">Sign Up</Link>
         </div>
         <Link to="/auth/newpassword" className="button3 link-no-underline">Forgot Password?</Link>
