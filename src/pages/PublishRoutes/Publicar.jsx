@@ -30,6 +30,7 @@ function Sendero() {
           alignItems: "center",
           height: "80vh",
           width: "100%",
+          marginTop: 0,
         }}
       >
         {/*Foto de <a href="https://unsplash.com/es/@karlarobinson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Karla Robinson</a> en <a href="https://unsplash.com/es/fotos/LtzOguTv0kU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
@@ -39,7 +40,8 @@ function Sendero() {
           fontSize: "24px", 
           color: "white", 
           textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", 
-          marginTop: 0}}>Aqui podrás publicar una nueva ruta</h2>
+          marginTop: 0,
+          }}>Aqui podrás publicar una nueva ruta</h2>
         <Campos />
       </div>
     </PageContainer>

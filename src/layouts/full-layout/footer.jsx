@@ -8,7 +8,7 @@ const Footer = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom color="white">
-              Compañia
+              COMPANY
             </Typography>
             <Typography variant="body2" gutterBottom color="white">
               123 Street
@@ -20,7 +20,7 @@ const Footer = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom color="white">
-              COMPANY
+              ABOUT US
             </Typography>
             <Typography variant="body2" gutterBottom color="white">
               ABOUT US
