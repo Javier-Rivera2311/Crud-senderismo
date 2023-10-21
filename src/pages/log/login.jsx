@@ -50,7 +50,7 @@ function LoginForm() {
         </div>
         <div className="btn">
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <Link to="/auth/register" className="button2 link-no-underline">Sign Up</Link>
+          <Link to="/auth/register" className="button2 link-no-underline">Create account</Link>
         </div>
         <Link to="/auth/newpassword" className="button3 link-no-underline">Forgot Password?</Link>
       </form></div>
