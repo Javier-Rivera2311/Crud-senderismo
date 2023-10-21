@@ -29,7 +29,7 @@ const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
 /* ****Routes***** */
 
 const Login = Loadable(lazy(() => import("../pages/log/login")));
-<Login path="/Login" component={Login} />
+<Login path="/Account" component={Login} />
 
 const AboutUs = Loadable(lazy(() => import("../pages/AboutUs/ABOUT_US")));
 <AboutUs path="/AboutUs" component={AboutUs} />
@@ -52,6 +52,8 @@ const Router = [
       {path: "Publish routes",exact: true, element: <Publish/>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
       {path: "Profile",exact: true, element: <Profile/>},
+      {path: "Login",exact: true, element: <Login/>},
+      {path: "Logout",exact: true, element: <Login/>},
 
 
 
@@ -67,6 +69,7 @@ const Router = [
       {path: "login",exact: true, element: <Login/>},
       {path: "Register",exact: true, element: <Register/>},
       {path: "NewPassword",exact: true, element: <NewPassword/>},
+      
 
 
 
