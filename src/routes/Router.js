@@ -28,7 +28,7 @@ const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
 <Profile path="/Profile" component={Profile} />
 /* ****Routes***** */
 
-const Login = Loadable(lazy(() => import("../pages/log/login")));
+const Login = Loadable(lazy(() => import("../pages/log/Login")));
 <Login path="/Account" component={Login} />
 
 const AboutUs = Loadable(lazy(() => import("../pages/AboutUs/ABOUT_US")));
@@ -52,7 +52,7 @@ const Router = [
       {path: "Publish routes",exact: true, element: <Publish/>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
       {path: "Profile",exact: true, element: <Profile/>},
-      {path: "Login",exact: true, element: <Login/>},
+      {path: "Sign in",exact: true, element: <Login hideHeaderFooter={true}/>},
       {path: "Logout",exact: true, element: <Login/>},
 
 
@@ -63,10 +63,10 @@ const Router = [
     path: "/auth",
     element: <LoginLayout />,
     children: [
-      { path: "", exact: true, element: <Navigate to="/auth/login" /> },
+      { path: "", exact: true, element: <Navigate to="/auth/Login" /> },
       { path: "*", element: <Navigate to="/404" /> },
       { path: "404", element: <Error /> },
-      {path: "login",exact: true, element: <Login/>},
+      {path: "Login",exact: true, element: <Login/>},
       {path: "Register",exact: true, element: <Register/>},
       {path: "NewPassword",exact: true, element: <NewPassword/>},
       
