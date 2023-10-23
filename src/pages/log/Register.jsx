@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import axios from 'axios';
 import './Register.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
@@ -16,8 +16,8 @@ function RegisterForm() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:4000/register',Values)
-    .then(res => console.log(res))
+    axios.post('http://localhost:4000/user/ingresar',Values)
+    .then(res => console.log(res.data))
     .then(err => console.log(err));
 
   }
