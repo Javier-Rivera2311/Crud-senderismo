@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './login.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
 import fondo3 from "../../assets/fondos/rutas.jpg";
@@ -43,7 +43,7 @@ function Login() {
       <form className="form" style={{
         maxWidth: 500
       }}>
-        <p id="heading">Login</p>
+        <p id="heading">login</p>
 
           <div className="field">
           <label htmlFor="email"><strong>email:</strong></label>
