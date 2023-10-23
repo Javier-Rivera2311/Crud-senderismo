@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link} from 'react-router-dom';
-import axios from 'axios';
+import { Link, useNavigate} from 'react-router-dom';
 import './Register.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -8,20 +7,33 @@ import fondo3 from "../../assets/fondos/rutas.jpg";
 
 const image = [fondo1, fondo2, fondo3]
 function RegisterForm() {
-  
+  const navigate =useNavigate();
   const [Values, setValues] = useState({
     name: '',
     email: '',
     password: ''
   });
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:4000/user/ingresar',Values)
-    .then(res => console.log(res.data))
-    .then(err => console.log(err));
-
+    fetch('http://localhost:4000/user/ingresar', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Values)
+    })
+    .then(res => {
+      if (res.status === 200) {
+        console.log('Registration successful');
+        // Redirigir al usuario a la página de inicio de sesión después de registrarse
+        navigate('/auth/login');
+      } else {
+        console.log('Registration failed');
+      }
+    })
+    .catch(err => console.log(err));
   }
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
     const changeImage = () => {
