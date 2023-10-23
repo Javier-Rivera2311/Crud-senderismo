@@ -28,7 +28,7 @@ const Profile = Loadable(lazy(() => import("../pages/Profile/Profile")));
 <Profile path="/Profile" component={Profile} />
 /* ****Routes***** */
 
-const Login = Loadable(lazy(() => import("../pages/log/Login")));
+const Login = Loadable(lazy(() => import("../pages/log/login")));
 <Login path="/Account" component={Login} />
 
 const AboutUs = Loadable(lazy(() => import("../pages/AboutUs/ABOUT_US")));
