@@ -1,18 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { FaLock, FaLockOpen } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import './login.css';
+import { Link,useNavigate } from 'react-router-dom';
+import './Login.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
 import fondo3 from "../../assets/fondos/rutas.jpg";
 
 const image = [fondo1, fondo2, fondo3]
 function Login() {
-  const [showPassword, setShowPassword] = useState(false);
 
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+  const [Values, setValues] = useState({
+    email: '',
+    password: ''
+  });
+  const navigate =useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:4000/user/login2', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Values)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.Status === 'Success'){
+        alert('User registered successfully');
+        navigate('/')
+      }else{
+        alert('error');
+      }
+    })
+    .catch(err => console.log(err));
+  }
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -40,21 +60,19 @@ function Login() {
         backgroundPosition: "center",
         width: "100%"
       }}>
-      <form className="form" style={{
-        maxWidth: 500
-      }}>
-        <p id="heading">login</p>
+      <form className="form" onSubmit={handleSubmit} style={{ maxWidth: 500 }}>
+        <p id="heading">Login</p>
 
           <div className="field">
           <label htmlFor="email"><strong>email:</strong></label>
           <input autoComplete="off" placeholder="Enter Email" name='email'
-          className="input-field" type="email" />
+          onChange={e => setValues({...Values, email: e.target.value})}className="input-field" type="email" />
           </div>
 
           <div className="field">
           <label htmlFor="password"><strong>Password:</strong></label>
           <input autoComplete="off" placeholder="Enter Password" name='password'
-          className="input-field" type="password" />
+          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 
         <div className="btn">
           {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
