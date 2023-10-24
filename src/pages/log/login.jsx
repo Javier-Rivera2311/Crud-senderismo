@@ -12,7 +12,9 @@ function Login() {
     email: '',
     password: ''
   });
-  const navigate =useNavigate();
+  
+  const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:4000/user/login2', {
@@ -24,11 +26,11 @@ function Login() {
     })
     .then(res => res.json())
     .then(data => {
-      if(data.Status === 'Success'){
-        alert('User registered successfully');
-        navigate('/')
+      if(data.success === true){
+        alert('Inicio de sesión exitoso');
+        navigate('/');
       }else{
-        alert('error');
+        alert('Correo electrónico o contraseña incorrectos');
       }
     })
     .catch(err => console.log(err));
