@@ -30,6 +30,7 @@ function RegisterForm() {
         navigate('/auth/login');
       } else {
         console.log('Registration failed');
+        alert('Este correo ya esta registrado')
       }
     })
     .catch(err => console.log(err));

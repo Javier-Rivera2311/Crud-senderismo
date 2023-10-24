@@ -25,8 +25,8 @@ function Login() {
     .then(res => res.json())
     .then(data => {
       if(data.Status === 'Success'){
-        alert('signed in successfully');
-        navigate('/HomePage')
+        alert('User registered successfully');
+        navigate('/')
       }else{
         alert('error');
       }
