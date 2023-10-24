@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
-import './login.css';
+import './Login.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
 import fondo3 from "../../assets/fondos/rutas.jpg";
