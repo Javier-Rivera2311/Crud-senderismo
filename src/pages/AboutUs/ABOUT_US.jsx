@@ -1,16 +1,37 @@
 import React from 'react';
-
-function About_us(){
-    return(
-        <div>
-            <h1>About us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis magni sunt aspernatur voluptate esse laborum cum, excepturi veniam non vel, adipisci molestiae laudantium est qui ex placeat quam quae earum!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos fuga officiis ullam temporibus amet unde, possimus quidem cumque laudantium soluta praesentium nihil tempora quos. Optio in amet ex vel cumque!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit repellendus esse distinctio placeat exercitationem enim itaque adipisci vel eius vitae fugit, nemo fuga, qui quisquam tempore ut fugiat amet nesciunt?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde natus beatae? Voluptatibus saepe quasi officiis repellat quaerat minus cum rem ex? Eveniet ratione neque ipsum nemo quos iusto reiciendis!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis excepturi provident non magni! Consectetur ea vitae delectus voluptate ut quo soluta animi, nostrum nesciunt, eum rerum ipsum numquam suscipit nemo.</p>
+import PageContainer from '../../components/container/PageContainer';
+import fondo from '../../assets/fondos/fondo.jpg'; // Importa imagen de fondo
+function About_us() {
+    const textStyle = {
+      fontSize: "4rem",
+      fontWeight: "bold",
+      color: "white",
+      textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+      textAlign: "center",
+    };
+  
+    return (
+      <PageContainer title="Abaut us" description="abaut us">
+  
+        <div
+          style={{
+            backgroundImage: `url(${fondo})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+            backgroundRepeat: "no-repeat",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            width: "100%",
+          }}>
+          <h1 style={textStyle}>Abaut us</h1>
         </div>
+      </PageContainer>
     );
-}
-
+  }
+  
+  
 export default About_us;

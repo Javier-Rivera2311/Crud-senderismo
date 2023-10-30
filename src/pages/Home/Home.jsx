@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
 import fondo from "../../assets/fondos/fondo.jpg"; // Importa imagen de fondo
-import Cards from "../..//pages/Home/components/cards.jsx";
+import Cards from "../../pages/Home/components/cards.jsx";
 
 function Home() {
   const textStyle = {
