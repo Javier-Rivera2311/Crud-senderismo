@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaLock, FaLockOpen } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import './NewPassword.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -8,13 +7,38 @@ import fondo3 from "../../assets/fondos/rutas.jpg";
 
 const image = [fondo1, fondo2, fondo3]
 function NewPassword() {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+ 
+  const [Values, setValues] = useState({
+    email: '',
+    newpassword: '',
+    confirmPassword: ''
+  });
   
+  const navigate = useNavigate();
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:4000/user/cambiar_password', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Values)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.success === true){
+        alert('Inicio de sesión exitoso');
+        navigate('/');
+      }else{
+        alert('Correo electrónico o contraseña incorrectos');
+      }
+    })
+    .catch(err => console.log(err));
+  }
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
     const changeImage = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % image.length);
     };
@@ -23,6 +47,8 @@ function NewPassword() {
       const interval = setInterval(changeImage, 5000); // Cambiar la imagen cada 5 segundos
       return () => clearInterval(interval);
     }, []);
+    
+
   
     return (
     <div
@@ -37,31 +63,30 @@ function NewPassword() {
         backgroundPosition: "center",
         width: "100%"
       }}>
-      <form className="form" style={{
-        maxWidth: 500
-      }}>
-        <p id="heading">New Password</p>
-        <div className="field">
-        <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
-          </svg>
-          <input placeholder="Password" className="input-field" type={showPassword? 'text':'password'} />
-          <button type="button" onClick={toggleShowPassword}>
-          {showPassword ? <FaLockOpen /> : <FaLock />}
-        </button>
-        </div>
-        <div className="field">
-          <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
-          </svg>
-          <input placeholder="Password" className="input-field" type={showPassword? 'text':'password'} />
-          <button type="button" onClick={toggleShowPassword}>
-          {showPassword ? <FaLockOpen /> : <FaLock />}
-        </button>
-        </div>
-        <div className="btn">
-          <Link to="/auth/login" className="button1 link-no-underline">Chanche password</Link>
+      <form className="form" onSubmit={handleSubmit} style={{ maxWidth: 500 }}>
+        <p id="heading">Login</p>
 
+          <div className="field">
+          <label htmlFor="email"><strong>email:</strong></label>
+          <input autoComplete="off" placeholder="Enter Email" name='email'
+          onChange={e => setValues({...Values, email: e.target.value})}className="input-field" type="email" />
+          </div>
+
+          <div className="field">
+          <label htmlFor="newpassword"><strong>new Password:</strong></label>
+          <input autoComplete="off" placeholder="Enter Password" name='password'
+          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
+          </div> 
+          <div className="field">
+          <label htmlFor="confirmpassword"><strong>confirm Password:</strong></label>
+          <input autoComplete="off" placeholder="Enter Password" name='password'
+          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
+          </div> 
+        <div className="btn">
+          {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
+          <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          
+          <Link to="/auth/login" className="button2 link-no-underline">Sign in</Link>
         </div>
       </form></div>
   );
