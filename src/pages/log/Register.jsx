@@ -11,11 +11,20 @@ function RegisterForm() {
   const [Values, setValues] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
   
   const handleSubmit = (event) => {
     event.preventDefault();
+
+  // Verificar si la contraseña cumple con los requisitos
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"|,.<>/?]).{6,}$/;
+  if (!passwordRegex.test(Values.password)) {
+    alert('La contraseña debe tener al menos una mayúscula, una minúscula, un número, un carácter especial y ser de al menos 6 caracteres');
+    return;
+  }
+
     fetch('http://localhost:4000/user/ingresar', {
       method: 'post',
       headers: {
@@ -79,13 +88,19 @@ function RegisterForm() {
           <label htmlFor="password"><strong>Password:</strong></label>
           <input autoComplete="off" placeholder="Enter Password" name='password'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
-          </div>  
+          </div>
+          
+          <div className="field">
+          <label htmlFor="confirmPassword"><strong>Confirm Password:</strong></label>
+          <input autoComplete="off" placeholder="Enter Password" name='password'
+          onChange={e => setValues({...Values, confirmPassword: e.target.value})}className="input-field" type="password" />
+          </div>            
 
         {/* botones */}
         <div className="btn">
           <button type='submit' className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
-        <Link to="/auth/login" className="button2 link-no-underline">Do you already have an account? Create</Link>
+        <Link to="/auth/login" className="button2 link-no-underline">Do you already have an account? Sign in </Link>
       </form>
     </div>
   );
