@@ -56,7 +56,6 @@ function Campos() {
 
   return (
     <div class="card">
-      <div class="card2">
         <form class="form" onSubmit={handleSubmit(onSubmit)}>
           <p id="heading">Formulario</p>
           <div class="field">
@@ -66,16 +65,16 @@ function Campos() {
             <input maxLength={25} type="text" class="input-field" placeholder="Nombre de la Ruta" {...register("nombre")} />
           </div>
           <div class="field">
-            <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
-              <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="input-icon" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
             </svg>
-            <input maxLength={100} type="text" class="input-field" placeholder="Comentarios de la Ruta" {...register("comentario")} />
-          </div>
+            <input maxLength={25} type="text" class="input-field" placeholder="Ubicación" {...register("ubicacion")} />
+          </div> 
           <div class="field">
             <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
               <path d="m1.854 14.854 13-13a.5.5 0 0 0-.708-.708l-13 13a.5.5 0 0 0 .708.708ZM4 1a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 4 1Zm5 11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5A.5.5 0 0 1 9 12Z"/>
             </svg>
-            <Select className="select-field react-select__control"
+            <Select className="select-field"
               
               options={dificultad}
               onChange={(selectedOption) => setValue("dificultad", selectedOption.value)}
@@ -97,11 +96,22 @@ function Campos() {
               styles={customStyles}
             />
           </div>
+          <div class="field">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="input-icon" viewBox="0 0 16 16">
+              <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM5 9h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
+            </svg>
+            <input maxLength={300} type="text" class="input-field" placeholder="Descripción de la ruta" {...register("descripcion")} />
+          </div>
+          <div class="field">
+            <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+              <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
+            </svg>
+            <input maxLength={300} type="text" class="input-field" placeholder="Comentarios de la Ruta" {...register("comentario")} />
+          </div>
           <div class="btn">
             <button class="button1" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enviar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
           </div>
         </form>
-      </div>
     </div>
   );
 }

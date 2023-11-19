@@ -28,7 +28,7 @@ function Sendero() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "80vh",
+          height: "100vh",
           width: "100%",
           marginTop: 0,
         }}
