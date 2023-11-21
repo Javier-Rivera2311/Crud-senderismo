@@ -2,18 +2,18 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.4em;
+  gap: 0.6rem;
+  padding-left: 1em;
+  padding-right: 8em;
+  padding-bottom: 1em;
   background-color: #171717;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 #heading {
   text-align: center;
-  margin: 2em;
-  color: rgb(0, 255, 200);
+  margin: 1em;
+  color: rgb(255, 255, 255);
   font-size: 1.2em;
 }
 
@@ -21,9 +21,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
-  border-radius: 25px;
-  padding: 0.6em;
+  gap: 5em;
+  border-radius: 10px;
+  padding: 0.8em;
   border: none;
   outline: none;
   color: white;
@@ -31,18 +31,12 @@
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
-.input-icon {
-  height: 1.3em;
-  width: 1.3em;
-  fill: rgb(0, 255, 200);
-}
-
 .input-field {
   background: none;
   border: none;
   outline: none;
   width: 100%;
-  color: rgb(0, 255, 200);
+  color: rgb(255, 255, 255);
   background-color: #171717;
   border-radius: 100px;
   word-wrap: break-word;
@@ -63,7 +57,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 2.5em;
+  margin-top: 1em;
 }
 
 .button1 {

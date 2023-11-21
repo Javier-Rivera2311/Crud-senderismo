@@ -60,7 +60,7 @@ function Campos() {
         backgroundImage: `fondo.jpg`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "100%"
+        width: "80%"
       }}>
       <form className="form" onSubmit={handleSubmit} style={{ maxWidth: 500, padding: "20px"}}>
         <p id="heading">Publish Route</p>

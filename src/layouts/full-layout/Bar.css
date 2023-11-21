@@ -1,5 +1,5 @@
 /* this is a recreation of twitter search in css */
-.form {
+.form2 {
     --input-text-color: #fff;
     --input-bg-color: #1b232c;
     --focus-input-bg-color: transparent;
@@ -10,7 +10,7 @@
     --gap: 0.9rem;
   }
   /* form style */
-  .form {
+  .form2 {
     font-size: 0.9rem;
     display: flex;
     gap: 0.5rem;

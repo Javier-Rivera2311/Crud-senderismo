@@ -107,7 +107,7 @@ function Header() {
               </Button>
             ))}
           </Box>
-          <form class="form">
+          <form class="form2">
     <label for="search">
         <input class="input" type="text" required="" placeholder="Search..." id="search"/>
         <div class="fancy-bg"></div>
