@@ -18,7 +18,13 @@ function NewPassword() {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:4000/user/cambiar_password', {
+
+    if (Values.newpassword !== Values.confirmPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+
+    fetch('http://localhost:4000/user/changePassword', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -28,10 +34,10 @@ function NewPassword() {
     .then(res => res.json())
     .then(data => {
       if(data.success === true){
-        alert('Inicio de sesión exitoso');
+        alert('Cambio de contraseña exitoso');
         navigate('/');
       }else{
-        alert('Correo electrónico o contraseña incorrectos');
+        alert('error al cambiar la contraseña');
       }
     })
     .catch(err => console.log(err));
@@ -64,7 +70,7 @@ function NewPassword() {
         width: "100%"
       }}>
       <form className="form" onSubmit={handleSubmit} style={{ maxWidth: 500 }}>
-        <p id="heading">Login</p>
+        <p id="heading">Change Password</p>
 
           <div className="field">
           <label htmlFor="email"><strong>email:</strong></label>
@@ -74,19 +80,18 @@ function NewPassword() {
 
           <div className="field">
           <label htmlFor="newpassword"><strong>new Password:</strong></label>
-          <input autoComplete="off" placeholder="Enter Password" name='password'
+          <input autoComplete="off" placeholder="Enter Password" name='newpassword'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 
           <div className="field">
           <label htmlFor="confirmpassword"><strong>confirm Password:</strong></label>
-          <input autoComplete="off" placeholder="Enter Password" name='password'
+          <input autoComplete="off" placeholder="Enter Password" name='confirmPassword'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 
         <div className="btn">
           {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
           
-          <Link to="/auth/login" className="button2 link-no-underline">Sign in</Link>
         </div>
       </form></div>
   );
