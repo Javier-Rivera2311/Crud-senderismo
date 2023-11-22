@@ -73,19 +73,16 @@ function NewPassword() {
         <p id="heading">Change Password</p>
 
           <div className="field">
-          <label htmlFor="email"><strong>email:</strong></label>
           <input autoComplete="off" placeholder="Enter Email" name='email'
           onChange={e => setValues({...Values, email: e.target.value})}className="input-field" type="email" />
           </div>
 
           <div className="field">
-          <label htmlFor="newpassword"><strong>new Password:</strong></label>
-          <input autoComplete="off" placeholder="Enter Password" name='newpassword'
+          <input autoComplete="off" placeholder="New Password" name='newpassword'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 
           <div className="field">
-          <label htmlFor="confirmpassword"><strong>confirm Password:</strong></label>
-          <input autoComplete="off" placeholder="Enter Password" name='confirmPassword'
+          <input autoComplete="off" placeholder="Confirm new Password" name='confirmPassword'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 
         <div className="btn">

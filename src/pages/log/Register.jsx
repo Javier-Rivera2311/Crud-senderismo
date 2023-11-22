@@ -19,7 +19,8 @@ function RegisterForm() {
     event.preventDefault();
 
   // Verificar si la contraseña cumple con los requisitos
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"|,.<>/?]).{6,}$/;
+  // eslint-disable-next-line no-useless-escape
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"|,.<>/?]).{6,}$/;
   if (!passwordRegex.test(Values.password)) {
     alert('La contraseña debe tener al menos una mayúscula, una minúscula, un número, un carácter especial y ser de al menos 6 caracteres');
     return;
@@ -73,26 +74,22 @@ function RegisterForm() {
       }}>
         <p id="heading">Register</p>
         <div className="field">
-          <label htmlFor="name"><strong>Name:</strong></label>
           <input autoComplete="off" placeholder="Enter Name" name='name'
           onChange={e => setValues({...Values, name: e.target.value})} className="input-field" type="text" />
           </div>
 
           <div className="field">
-          <label htmlFor="email"><strong>email:</strong></label>
           <input autoComplete="off" placeholder="Enter Email" name='email'
           onChange={e => setValues({...Values, email: e.target.value})} className="input-field" type="email" />
           </div>
 
           <div className="field">
-          <label htmlFor="password"><strong>Password:</strong></label>
           <input autoComplete="off" placeholder="Enter Password" name='password'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div>
           
           <div className="field">
-          <label htmlFor="confirmPassword"><strong>Confirm Password:</strong></label>
-          <input autoComplete="off" placeholder="Enter Password" name='password'
+          <input autoComplete="off" placeholder="Confirm Password" name='password'
           onChange={e => setValues({...Values, confirmPassword: e.target.value})}className="input-field" type="password" />
           </div>            
 

@@ -66,13 +66,11 @@ function Login() {
         <p id="heading">Login</p>
 
           <div className="field">
-          <label htmlFor="email"><strong>email:</strong></label>
           <input autoComplete="off" placeholder="Enter Email" name='email'
           onChange={e => setValues({...Values, email: e.target.value})}className="input-field" type="email" />
           </div>
 
           <div className="field">
-          <label htmlFor="password"><strong>Password:</strong></label>
           <input autoComplete="off" placeholder="Enter Password" name='password'
           onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
           </div> 

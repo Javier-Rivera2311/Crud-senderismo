@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./fondo.css"
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 function Campos() {
   const [values, setValues] = useState({
@@ -71,9 +72,40 @@ function Campos() {
         </div>
 
         <div className="field">
-          <input autoComplete="off" placeholder="Ingresar ubicación" name='ubicacion'
-            onChange={e => setValues({ ...values, ubicacion: e.target.value })} className="input-field" />
-        </div>
+        <PlacesAutocomplete
+  value={values.ubicacion}
+  onChange={ubicacion => setValues({ ...values, ubicacion })}
+  onSelect={ubicacion => {
+    setValues({ ...values, ubicacion }); // Asegúrate de que estás actualizando el estado aquí
+    geocodeByAddress(ubicacion)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+  }}
+>
+  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+    <div>
+      <input
+        {...getInputProps({
+          placeholder: 'Ingresar ubicación',
+          className: 'input-field',
+        })}
+      />
+      <div>
+        {loading && <div>Loading...</div>}
+        {suggestions.map(suggestion => {
+          const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
+          return (
+<div {...getSuggestionItemProps(suggestion, { className })}>
+  <span>{suggestion.description}</span>
+</div>
+          );
+        })}
+      </div>
+    </div>
+  )}
+</PlacesAutocomplete>
+</div>
 
 <div className="field">
   <select className="full-width" onChange={e => setValues({ ...values, dificultad: e.target.value })}>
