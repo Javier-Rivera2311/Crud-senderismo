@@ -66,40 +66,35 @@ function Campos() {
         <p id="heading">Publish Route</p>
 
         <div className="field">
-          <label htmlFor="nombre"><strong>Nombre:</strong></label>
-          <input autoComplete="off" placeholder="Enter Nombre" name='nombre'
+          <input autoComplete="off" placeholder="Ingrese el nombre de la ruta" name='nombre'
             onChange={e => setValues({ ...values, nombre: e.target.value })} className="input-field" type="text" />
         </div>
 
         <div className="field">
-          <label htmlFor="ubicacion"><strong>Ubicacion:</strong></label>
-          <input autoComplete="off" placeholder="Enter Ubicacion" name='ubicacion'
+          <input autoComplete="off" placeholder="Ingresar ubicación" name='ubicacion'
             onChange={e => setValues({ ...values, ubicacion: e.target.value })} className="input-field" />
         </div>
 
-        <div className="field">
-          <label htmlFor="dificultad"><strong>Dificultad:</strong></label>
-          <select onChange={e => setValues({ ...values, dificultad: e.target.value })}>
-            <option value="" disabled selected>Select Dificultad</option>
-            {dificultadOptions.map(option => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </div>
+<div className="field">
+  <select className="full-width" onChange={e => setValues({ ...values, dificultad: e.target.value })}>
+    <option value="" disabled selected>Select Dificultad</option>
+    {dificultadOptions.map(option => (
+      <option key={option.value} value={option.value}>{option.label}</option>
+    ))}
+  </select>
+</div>
+
+<div className="field">
+  <select className="full-width" onChange={e => setValues({ ...values, tipo_de_ruta: e.target.value })}>
+    <option value="" disabled selected>Select Tipo de Ruta</option>
+    {tipoRutaOptions.map(option => (
+      <option key={option.value} value={option.value}>{option.label}</option>
+    ))}
+  </select>
+</div>
 
         <div className="field">
-          <label htmlFor="tipo_de_ruta"><strong>Tipo de Ruta:</strong></label>
-          <select onChange={e => setValues({ ...values, tipo_de_ruta: e.target.value })}>
-            <option value="" disabled selected>Select Tipo de Ruta</option>
-            {tipoRutaOptions.map(option => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </div>
-
-        <div className="field">
-          <label htmlFor="comentario"><strong>Comentario:</strong></label>
-          <textarea placeholder="Enter Comentario" name='comentario'
+          <textarea placeholder="Ingresar comentarios" name='comentario'
             onChange={e => setValues({ ...values, comentario: e.target.value })} className="input-field" style={{ fontSize: "16px", padding: "8px" }} />
         </div>
 
