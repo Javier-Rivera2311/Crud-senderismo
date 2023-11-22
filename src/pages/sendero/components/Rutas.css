@@ -1,0 +1,101 @@
+/*Fondo Formulario*/
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #171717;
+    border-radius: 20px;
+    width: 40%;
+  }
+  
+  #heading {
+    text-align: center;
+    margin: 1em;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 20px;
+    padding: 0.9em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  .full-width {
+    width: 100%;
+    color: white;
+    background-color: #272727;
+  }
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 150%;
+    color: rgb(255, 255, 255);
+    background-color: #171717;
+    word-wrap: break-word;
+    text-align: left; /* Ajusta el texto */
+  }
+  
+  
+  
+  .select-field {
+    color: rgb(0, 255, 200);
+    background-color: #171717;
+    border: none;
+    outline: none;
+    border-radius: px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .suggestion-item {
+    background-color: #292828;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .suggestion-item--active {
+    background-color: #f3f7bc;
+    color: #000000;
+    cursor: pointer;
+    text-align: left;
+  }
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1em;
+    
+  }
+  
+  .button1 {
+    text-align: center;
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    color: rgb(0, 0, 0);
+  }
+  
+  .button1:hover {
+    background-image: linear-gradient(163deg, #def700  0%, #307502 100%);
+    color: rgb(255, 255, 255);
+  }
+  
+  
