@@ -4,7 +4,7 @@ import publicar from "../../assets/fondos/publicar.jpg"; // Importa imagen de fo
 import Campos from "./componentesPublicarRutas/Campos.jsx";
 
 
-function Sendero() {
+function Publicar() {
   const textStyle = {
     fontSize: "2rem",
     fontWeight: "bold",
@@ -43,4 +43,4 @@ function Sendero() {
   );
 }
 
-export default Sendero;
+export default Publicar;

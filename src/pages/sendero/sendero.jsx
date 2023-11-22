@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "../../components/container/PageContainer";
-import rutas from "../../assets/fondos/rutas.jpg"; // Importa imagen de fondo
-import Ruta from "../..//pages/sendero/components/rutas.jsx";
+import ru from "../../assets/fondos/rutas.jpg"; // Importa imagen de fondo
+import Rutas from "./components/Rutas.jsx";
 
 function Sendero() {
   const textStyle = {
@@ -17,7 +17,7 @@ function Sendero() {
 
       <div
         style={{
-          backgroundImage: `url(${rutas})`,
+          backgroundImage: `url(${ru})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -26,18 +26,15 @@ function Sendero() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          height: "50vh",
+          height: "100vh",
           width: "100%",
+          marginTop: 0,
         }}
       >
-        {/* agregar Foto de <a href="https://unsplash.com/es/@hansjuergen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Hans-Jürgen Weinhardt</a> en <a href="https://unsplash.com/es/fotos/5RwAkpugU98?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-   */}
-        <h1 style={textStyle}>Routes</h1>
-      </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Ruta />
-      </div>
 
+        <h1 style={textStyle}>llena el formulario para que otros usuarios te acompañen</h1>
+        <Rutas />
+      </div>
     </PageContainer>
   );
 }
