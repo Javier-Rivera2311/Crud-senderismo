@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import Loadable from "../layouts/Loadable";
 import { Navigate } from "react-router-dom";
-
+import ProtectedRoute from './ProtectedRoute';
 /* ***Layouts**** */
 const FullLayout = Loadable(
   lazy(() => import("../layouts/full-layout/MainLayout"))
@@ -48,8 +48,8 @@ const Router = [
       { path: "", exact: true, element: <HomePage /> },
       { path: "*", element: <Navigate to="/404" /> },
       { path: "404", element: <Error /> },
-      {path: "Routes",exact: true, element: <Sendero/>},
-      {path: "Publish routes",exact: true, element: <Publish/>},
+      {path: "Routes",exact: true, element: <ProtectedRoute><Sendero/></ProtectedRoute>},
+      {path: "Publish routes",exact: true, element:  <ProtectedRoute><Publish/></ProtectedRoute>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
       {path: "Profile",exact: true, element: <Profile/>},
       {path: "Sign in",exact: true, element: <Login hideHeaderFooter={true}/>},

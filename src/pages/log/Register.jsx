@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './Register.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -14,7 +16,10 @@ function RegisterForm() {
     password: '',
     confirmPassword: ''
   });
-  
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -83,16 +88,33 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{
           onChange={e => setValues({...Values, email: e.target.value})} className="input-field" type="email" />
           </div>
 
-          <div className="field">
-          <input autoComplete="off" placeholder="Enter Password" name='password'
-          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
-          </div>
-          
-          <div className="field">
-          <input autoComplete="off" placeholder="Confirm Password" name='password'
-          onChange={e => setValues({...Values, confirmPassword: e.target.value})}className="input-field" type="password" />
-          </div>            
+<div className="field">
+  <input 
+    autoComplete="off" 
+    placeholder="Enter Password" 
+    name='password'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowPassword(!showPassword)}>
+    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+  </button>
+</div> 
 
+<div className="field">
+  <input 
+    autoComplete="off" 
+    placeholder="Confirm Password" 
+    name='confirmPassword'
+    onChange={e => setValues({...Values, confirmPassword: e.target.value})}
+    className="input-field" 
+    type={showConfirmPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+    <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+  </button>
+</div>
         {/* botones */}
         <div className="btn">
           <button type='submit' className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
