@@ -91,7 +91,7 @@ function NewPassword() {
     className="input-field" 
     type={showNewPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowNewPassword(!showNewPassword)}>
+  <button type="button" onClick={() => setShowNewPassword(!showNewPassword) }className='eye-button'>
     <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
   </button>
 </div> 
@@ -105,7 +105,7 @@ function NewPassword() {
     className="input-field" 
     type={showConfirmPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}className='eye-button'>
     <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
   </button>
 </div>

@@ -97,7 +97,7 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{
     className="input-field" 
     type={showPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowPassword(!showPassword)}>
+  <button type="button" onClick={() => setShowPassword(!showPassword)}className='eye-button'>
     <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
   </button>
 </div> 
@@ -111,7 +111,7 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{
     className="input-field" 
     type={showConfirmPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}className='eye-button'>
     <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
   </button>
 </div>

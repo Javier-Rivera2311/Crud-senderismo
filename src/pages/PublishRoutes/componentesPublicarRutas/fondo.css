@@ -82,7 +82,7 @@
 }
 
 .suggestion-item--active {
-  background-color: #f3f7bc;
+  background-color: #ecf577;
   color: #000000;
   cursor: pointer;
   text-align: left;
