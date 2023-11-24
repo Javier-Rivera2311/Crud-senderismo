@@ -85,7 +85,7 @@ function Login() {
     className="input-field" 
     type={showPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowPassword(!showPassword)}>
+  <button type="button" onClick={() => setShowPassword(!showPassword)} className='eye-button'>
     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
   </button>
 </div> 
