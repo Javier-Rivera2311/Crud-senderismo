@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './NewPassword.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
@@ -15,6 +17,9 @@ function NewPassword() {
   });
   
   const navigate = useNavigate();
+  const [showNewPassword, setShowNewPassword] = useState(false); // Agrega esta línea
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Agrega esta línea
+
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -78,17 +83,38 @@ function NewPassword() {
           </div>
 
           <div className="field">
-          <input autoComplete="off" placeholder="New Password" name='newpassword'
-          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
-          </div> 
-          <div className="field">
-          <input autoComplete="off" placeholder="Confirm new Password" name='confirmPassword'
-          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
-          </div> 
+  <input 
+    autoComplete="off" 
+    placeholder="New Password" 
+    name='newpassword'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showNewPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowNewPassword(!showNewPassword)}>
+    <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
+  </button>
+</div> 
+
+<div className="field">
+  <input 
+    autoComplete="off" 
+    placeholder="Confirm new Password" 
+    name='confirmPassword'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showConfirmPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+    <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+  </button>
+</div>
         <div className="btn">
           {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          
+        </div>
+        <div>
+        <Link to="/auth/login" className="button1 link-no-underline">Back to Sign in</Link>
         </div>
       </form></div>
   );

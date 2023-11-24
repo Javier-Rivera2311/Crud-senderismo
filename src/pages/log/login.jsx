@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
 import fondo1 from "../../assets/fondos/fondo.jpg";
 import fondo2 from "../../assets/fondos/publicar.jpg";
 import fondo3 from "../../assets/fondos/rutas.jpg";
+
 
 const image = [fondo1, fondo2, fondo3]
 function Login() {
@@ -12,6 +15,8 @@ function Login() {
     email: '',
     password: ''
   });
+
+  const [showPassword, setShowPassword] = useState(false);
   
   const navigate = useNavigate();
   
@@ -27,6 +32,7 @@ function Login() {
     .then(res => res.json())
     .then(data => {
       if(data.success === true){
+        localStorage.setItem('authToken', data.token);
         alert('Inicio de sesión exitoso');
         navigate('/');
       }else{
@@ -71,9 +77,18 @@ function Login() {
           </div>
 
           <div className="field">
-          <input autoComplete="off" placeholder="Enter Password" name='password'
-          onChange={e => setValues({...Values, password: e.target.value})}className="input-field" type="password" />
-          </div> 
+  <input 
+    autoComplete="off" 
+    placeholder="Enter Password" 
+    name='password'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowPassword(!showPassword)}>
+    <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+  </button>
+</div> 
         <div className="btn">
           {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
           <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
