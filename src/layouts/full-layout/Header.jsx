@@ -1,24 +1,24 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/logoBar/image.png";
 import opcBar from "../../assets/logoBar/opcBar.png";
 import "./Bar.css";
 function Header() {
   
   const pages = ["Routes", "Publish Routes","ABOUT US"];
-  const settings = ["Profile", "Sign in", "Dashboard", "Logout"];
+  const settings = ["Profile", "Dashboard"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-
+  const isUserLoggedIn = !!localStorage.getItem('authToken');
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
+  const navigate = useNavigate();
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -30,6 +30,11 @@ function Header() {
   const redireccionarMenu = (destino) => {
     window.location.href = destino;
   }
+
+  const cerrarSesion = () => {
+    localStorage.removeItem('authToken');
+    navigate('/');
+  };
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
@@ -120,40 +125,49 @@ function Header() {
         </div>
     </label>
 </form>
-          <Box sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}>
-
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                <Avatar alt="Remy Sharp" src={opcBar} />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={() => redireccionarMenu(setting)} to>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+<Box sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}>
+  <Tooltip title="Open settings">
+    <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
+      <Avatar alt="Remy Sharp" src={opcBar} />
+    </IconButton>
+  </Tooltip>
+  <Menu
+  sx={{ mt: "45px" }}
+  id="menu-appbar"
+  anchorEl={anchorElUser}
+  anchorOrigin={{
+    vertical: "top",
+    horizontal: "right",
+  }}
+  keepMounted
+  transformOrigin={{
+    vertical: "top",
+    horizontal: "right",
+  }}
+  open={Boolean(anchorElUser)}
+  onClose={handleCloseUserMenu}
+>
+  {isUserLoggedIn && settings.map((setting) => (
+    <MenuItem key={setting} onClick={() => redireccionarMenu(setting)} to>
+      <Typography textAlign="center">{setting}</Typography>
+    </MenuItem>
+  ))}
+  {!isUserLoggedIn && 
+    <MenuItem onClick={() => navigate('/auth/login')}>
+      <Typography textAlign="center">Sign in</Typography>
+    </MenuItem>
+  }
+  {isUserLoggedIn && 
+    <MenuItem onClick={cerrarSesion}>
+      <Typography textAlign="center">Logout</Typography>
+    </MenuItem>
+  }
+</Menu>
+</Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
-}
+};
 
 export default Header;

@@ -32,7 +32,12 @@ function Login() {
     .then(res => res.json())
     .then(data => {
       if(data.success === true){
-        localStorage.setItem('authToken', data.token);
+        // Guarda el token, el nombre y el correo electrónico en el almacenamiento local
+        localStorage.setItem('authToken', JSON.stringify({
+          token: data.token,
+          name: data.name,
+          email: data.email
+        }));
         alert('Inicio de sesión exitoso');
         navigate('/');
       }else{

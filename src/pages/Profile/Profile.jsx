@@ -1,33 +1,31 @@
-import React from "react";
-import PageContainer from "../../components/container/PageContainer";
-import publicar from "../../assets/fondos/publicar.jpg"; // Importa imagen de fondo
-import { Box } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Typography, Paper, Avatar } from "@mui/material";
 
+const Profile = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+ 
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('authToken'));
+    if (user) {
+      setName(user.name);
+      setEmail(user.email);
+    }
+  }, []);
 
-const Profile = () => (
-    <PageContainer title="Profile" description="Perfil de usuario">
-        <Box>
-            <h1>Hola mundo</h1>
-            <h2>Esto es un subtitulo</h2>
-        </Box>
+  return (
+    <Box component="main" display="flex" flexDirection="column" alignItems="center" justifyContent="center" height="100vh">
+      <Paper style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Avatar>{name.charAt(0)}</Avatar>
+        <Typography variant="h5" style={{ marginTop: '20px' }}>
+          {name}
+        </Typography>
+        <Typography variant="body1" style={{ marginTop: '10px' }}>
+          {email}
+        </Typography>
+      </Paper>
+    </Box>
+  );
+};
 
-        <Box 
-            style={{
-                backgroundImage: `url(${publicar})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundAttachment: "fixed",
-                backgroundRepeat: "no-repeat",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "65vh",
-                width: "100%",
-              }}
-        >
-            <h1>Publicar</h1>
-        </Box>
-    </PageContainer>
-);
 export default Profile;
