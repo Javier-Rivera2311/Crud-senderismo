@@ -8,7 +8,7 @@ import "./Bar.css";
 function Header() {
   
   const pages = ["Routes", "Publish Routes","ABOUT US"];
-  const settings = ["Profile", "Dashboard"];
+  const settings = ["Profile"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const isUserLoggedIn = !!localStorage.getItem('authToken');
