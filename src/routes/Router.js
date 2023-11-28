@@ -51,7 +51,7 @@ const Router = [
       {path: "Routes",exact: true, element: <ProtectedRoute><Sendero/></ProtectedRoute>},
       {path: "Publish routes",exact: true, element:  <ProtectedRoute><Publish/></ProtectedRoute>},
       {path: "ABOUT US",exact: true, element: <AboutUs/>},
-      {path: "Profile",exact: true, element: <Profile/>},
+      {path: "Profile",exact: true, element: <ProtectedRoute><Profile/></ProtectedRoute>},
       {path: "Sign in",exact: true, element: <Login hideHeaderFooter={true}/>},
       {path: "Logout",exact: true, element: <Login/>},
 
