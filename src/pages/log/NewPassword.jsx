@@ -79,42 +79,33 @@ function NewPassword() {
           <input autoComplete="off" placeholder="Enter Email" name='email'
           onChange={e => setValues({...Values, email: e.target.value})}className="input-field" type="email" />
           </div>
-
           <div className="field">
-          <input 
-            autoComplete="off" 
-            placeholder="New Password" 
-            name='newpassword'
-            onChange={e => setValues({...Values, newpassword: e.target.value})}
-            className="input-field" 
-            type={showNewPassword ? "text" : "password"} 
-          />
-          <button 
-            type="button" 
-            onClick={() => setShowNewPassword(!showNewPassword)}
-            className='eye-button'
-          >
-            <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
-          </button>
-        </div> 
+  <input 
+    autoComplete="off" 
+    placeholder="New Password" 
+    name='newpassword'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showNewPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowNewPassword(!showNewPassword) }className='eye-button'>
+    <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
+  </button>
+</div> 
 
-        <div className="field">
-          <input 
-            autoComplete="off" 
-            placeholder="Confirm new Password" 
-            name='confirmPassword'
-            onChange={e => setValues({...Values, confirmPassword: e.target.value})}
-            className="input-field" 
-            type={showConfirmPassword ? "text" : "password"} 
-          />
-          <button 
-            type="button" 
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className='eye-button'
-          >
-            <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
-          </button>
-        </div>
+<div className="field">
+  <input 
+    autoComplete="off" 
+    placeholder="Confirm new Password" 
+    name='confirmPassword'
+    onChange={e => setValues({...Values, password: e.target.value})}
+    className="input-field" 
+    type={showConfirmPassword ? "text" : "password"} 
+  />
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}className='eye-button'>
+    <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+  </button>
+</div>
 
         <div className="btn">
           <button className="button1">
