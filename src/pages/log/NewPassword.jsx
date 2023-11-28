@@ -58,8 +58,6 @@ function NewPassword() {
       const interval = setInterval(changeImage, 5000); // Cambiar la imagen cada 5 segundos
       return () => clearInterval(interval);
     }, []);
-    
-
   
     return (
     <div
@@ -83,41 +81,60 @@ function NewPassword() {
           </div>
 
           <div className="field">
-  <input 
-    autoComplete="off" 
-    placeholder="New Password" 
-    name='newpassword'
-    onChange={e => setValues({...Values, password: e.target.value})}
-    className="input-field" 
-    type={showNewPassword ? "text" : "password"} 
-  />
-  <button type="button" onClick={() => setShowNewPassword(!showNewPassword) }className='eye-button'>
-    <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
-  </button>
-</div> 
+          <input 
+            autoComplete="off" 
+            placeholder="New Password" 
+            name='newpassword'
+            onChange={e => setValues({...Values, newpassword: e.target.value})}
+            className="input-field" 
+            type={showNewPassword ? "text" : "password"} 
+          />
+          <button 
+            type="button" 
+            onClick={() => setShowNewPassword(!showNewPassword)}
+            className='eye-button'
+          >
+            <FontAwesomeIcon icon={showNewPassword ? faEyeSlash : faEye} />
+          </button>
+        </div> 
 
-<div className="field">
-  <input 
-    autoComplete="off" 
-    placeholder="Confirm new Password" 
-    name='confirmPassword'
-    onChange={e => setValues({...Values, password: e.target.value})}
-    className="input-field" 
-    type={showConfirmPassword ? "text" : "password"} 
-  />
-  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}className='eye-button'>
-    <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
-  </button>
-</div>
+        <div className="field">
+          <input 
+            autoComplete="off" 
+            placeholder="Confirm new Password" 
+            name='confirmPassword'
+            onChange={e => setValues({...Values, confirmPassword: e.target.value})}
+            className="input-field" 
+            type={showConfirmPassword ? "text" : "password"} 
+          />
+          <button 
+            type="button" 
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            className='eye-button'
+          >
+            <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+          </button>
+        </div>
+
         <div className="btn">
-          {/*<button className="button1"onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>*/}
-          <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button className="button1">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
         </div>
-        <div>
-        <Link to="/auth/login" className="button1 link-no-underline">Back to Sign in</Link>
+
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <Link 
+            to={localStorage.getItem('authToken') ? "/profile" : "/auth/login"} 
+            className="button1 link-no-underline"
+          >
+            {localStorage.getItem('authToken') ? "Back to profile" : "Back to Sign in"}
+          </Link>
         </div>
-      </form></div>
-  );
-}
+
+        </form>
+        </div>
+        );
+
+        }
 
 export default NewPassword;
