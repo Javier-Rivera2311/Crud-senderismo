@@ -22,7 +22,7 @@ const Profile = () => {
       flexDirection="column" 
       alignItems="center" 
       justifyContent="center" 
-      height="100vh"
+      height="80vh"
       position="relative"
     >
       <Box
@@ -35,11 +35,11 @@ const Profile = () => {
           backgroundImage: `url(${fondo1})`, 
           backgroundSize: 'cover', 
           backgroundPosition: 'center',
-          filter: 'blur(1px) brightness(50%)',
+          filter: 'brightness(30%)',
           zIndex: -1
         }}
       />
-      <Paper style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+      <Paper style={{ padding: '30px',  borderRadius: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
         <Avatar>{name.charAt(0)}</Avatar>
         <Typography variant="h5" style={{ marginTop: '20px' }}>
           {name}
@@ -47,7 +47,7 @@ const Profile = () => {
         <Typography variant="body1" style={{ marginTop: '10px' }}>
           {email}
         </Typography>
-        <Button variant="contained" color="primary" component={Link} to="/auth/Login" style={{ marginTop: '20px' }}>
+        <Button variant="contained" color="primary" component={Link} to="/auth/newpassword" style={{ marginTop: '20px' }}>
           Cambiar contraseña
         </Button>
       </Paper>
