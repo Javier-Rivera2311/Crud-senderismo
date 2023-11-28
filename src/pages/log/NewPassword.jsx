@@ -13,7 +13,7 @@ function NewPassword() {
   const [Values, setValues] = useState({
     email: '',
     newpassword: '',
-    password: ''
+    confirmPassword: ''
   });
   
   const navigate = useNavigate();
@@ -29,14 +29,13 @@ function NewPassword() {
       return;
     }
 
-fetch('http://localhost:4000/user/changePassword', {
-  method: 'post',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(Values)
-})
-
+    fetch('http://localhost:4000/user/changePassword', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Values)
+    })
     .then(res => res.json())
     .then(data => {
       if(data.success === true){
@@ -88,7 +87,7 @@ fetch('http://localhost:4000/user/changePassword', {
     autoComplete="off" 
     placeholder="New Password" 
     name='newpassword'
-    onChange={e => setValues({...Values, newpassword: e.target.value})}
+    onChange={e => setValues({...Values, password: e.target.value})}
     className="input-field" 
     type={showNewPassword ? "text" : "password"} 
   />
@@ -102,11 +101,11 @@ fetch('http://localhost:4000/user/changePassword', {
     autoComplete="off" 
     placeholder="Confirm new Password" 
     name='confirmPassword'
-    onChange={e => setValues({...Values, confirmPassword: e.target.value})}
+    onChange={e => setValues({...Values, password: e.target.value})}
     className="input-field" 
     type={showConfirmPassword ? "text" : "password"} 
   />
-  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className='eye-button'>
+  <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)}className='eye-button'>
     <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
   </button>
 </div>
